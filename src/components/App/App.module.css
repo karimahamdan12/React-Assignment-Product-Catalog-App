@@ -1,0 +1,10 @@
+header {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.wrapper {
+  font-family: Arial;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+}
