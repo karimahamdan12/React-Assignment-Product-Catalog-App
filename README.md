@@ -97,6 +97,10 @@ To make the app feel fast and responsive, I made a few key decisions:
 
 ## What Could Have Been Improved If I Had More Time
 
+### Adding a spinner
+
+if i had more time i will add a spinner for data loading to add a user feedback
+
 ### Add Pagination
 
 Currently, the project deals with only a few images, so performance isn’t an issue.  
