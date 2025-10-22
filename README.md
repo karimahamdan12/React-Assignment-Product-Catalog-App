@@ -88,6 +88,16 @@ Here’s what makes it special:
 
 > TL;DR: It’s a simple, reusable, and flexible dropdown that balances **control** for the consumer with **safeguards for design consistency**.
 
+## Usability and Accessibility
+
+While I’m not an accessibility expert, I’ve made an effort to ensure the app is **usable and accessible**, following HTML semantics and best practices.
+
+Some key steps I took include:
+
+- **ARIA labels** – Added descriptive `aria-label`s to inputs and interactive elements for screen readers.
+- **Keyboard navigation** – Ensured the app can be fully navigated using the keyboard by using proper interactive elements (`<button>`, `<a>`, `<select>`, etc.) and maintaining focus order.
+- **Semantic HTML** – Used HTML elements according to their purpose to improve usability, accessibility, and maintainability.
+
 ## Performance
 
 To make the app feel fast and responsive, I made a few key decisions:
