@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react";
-import styles from "./SearchForm.module.css";
-function SearchForm({ productList, setFilteredData, filteredData }) {
+import styles from "./FilterBar.module.css";
+import SelectDropDown from "../SelectDropDown";
+import { CATEGORIES, SORT_OPTIONS } from "../../constants/ProductCard";
+function FilterBar({ productList, setFilteredData }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [sortByPrice, setsortByPrice] = useState("");
-  const [filters, setFilters] = useState({
-    searchTerm,
-    selectedCategory,
-    sortByPrice,
-  });
   useEffect(() => {
-    setFilters({ searchTerm, selectedCategory, sortByPrice });
-  }, [sortByPrice, selectedCategory, searchTerm]);
-  useEffect(() => {
-    console.log({ filters });
-    ApplyFilters({ filters, productList, setFilteredData, filteredData });
-  }, [filters]);
+    ApplyFilters({
+      filters: { searchTerm, selectedCategory, sortByPrice },
+      productList,
+      setFilteredData,
+    });
+  }, [searchTerm, selectedCategory, sortByPrice, productList]);
+
   return (
     <form>
       <div className={styles.filtersFlex}>
@@ -33,26 +31,18 @@ function SearchForm({ productList, setFilteredData, filteredData }) {
           />
         </div>
         <div className={styles["select-wrapper"]}>
-          <select
+          <SelectDropDown
             id="category-select"
             value={selectedCategory}
             onChange={(event) => {
               setSelectedCategory(event.target.value);
             }}
-            aria-label="chose the category"
+            aria-label="chose a category"
             className={styles["category-select"]}
-          >
-            <option value="" disabled>
-              --Category--
-            </option>
-            <option value="All">All</option>
-            <option value="women's clothing">women's clothing</option>
-            <option value="men's clothing">men's clothing</option>
-            <option value="jewelery">jewelery</option>
-            <option value="electronics">electronics</option>
-          </select>
-
-          <select
+            placeHolder="--Category--"
+            options={CATEGORIES}
+          />
+          <SelectDropDown
             id="sort-select"
             className={styles["sort-select"]}
             value={sortByPrice}
@@ -60,20 +50,16 @@ function SearchForm({ productList, setFilteredData, filteredData }) {
               setsortByPrice(event.target.value);
             }}
             aria-label="sort by price"
-          >
-            <option value="" disabled>
-              --Price--
-            </option>
-            <option value="Ascending">Ascending</option>
-            <option value="Descending">Descending</option>
-          </select>
+            placeHolder="--Price--"
+            options={SORT_OPTIONS}
+          />
         </div>
       </div>
     </form>
   );
 }
 
-export default SearchForm;
+export default FilterBar;
 
 function ApplyFilters({ filters, productList, setFilteredData }) {
   const { searchTerm, selectedCategory, sortByPrice } = filters;

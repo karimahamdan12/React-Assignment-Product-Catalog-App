@@ -21,3 +21,15 @@ export const CATEGORY_INFOS_MAPPING = {
     bgColor: "#FFF6D9",
   },
 };
+
+export const CATEGORIES = [
+  { label: "All", value: "All" },
+  { label: "Women's Clothing", value: "women's clothing" },
+  { label: "Men's Clothing", value: "men's clothing" },
+  { label: "Jewelery", value: "jewelery" },
+  { label: "Electronics", value: "electronics" },
+];
+export const SORT_OPTIONS = [
+  { label: "Ascending", value: "Ascending" },
+  { label: "Descending", value: "Descending" },
+];

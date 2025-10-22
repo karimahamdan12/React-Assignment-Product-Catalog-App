@@ -46,7 +46,10 @@ function Product({ item }) {
         aria-label="Add to favorites"
         onClick={addToFavorites}
       >
-        <Heart stroke={isFavorite ? "#E63963" : "black"} />
+        <Heart
+          fill={isFavorite ? "#E63963" : "none"}
+          stroke={isFavorite ? "#E63963" : "black"}
+        />
       </button>
       <span
         className={styles["product-category"]}

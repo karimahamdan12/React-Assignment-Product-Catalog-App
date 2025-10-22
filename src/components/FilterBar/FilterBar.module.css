@@ -31,16 +31,6 @@
   align-items: center;
   gap: 1rem;
 }
-.sort-select,
-.category-select {
-  padding-block: 1rem;
-  border: none;
-  background-color: #f5f5f5;
-  font-weight: 600;
-}
-.category-select {
-  margin-right: 8px;
-}
 
 .search-bar input {
   flex: 1;
